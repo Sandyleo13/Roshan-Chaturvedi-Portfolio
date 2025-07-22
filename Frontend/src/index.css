@@ -1,0 +1,265 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Roshan Chaturvedi Portfolio Design System
+Modern, professional, and elegant design inspired by Pine & Liko themes
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Brand Colors - Professional & Warm */
+    --background: 0 0% 100%;
+    --foreground: 230 18% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 230 18% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 18% 12%;
+
+    /* Primary - Deep Navy */
+    --primary: 230 35% 15%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 230 25% 25%;
+    --primary-glow: 230 40% 35%;
+
+    /* Secondary - Warm Gold Accent */
+    --secondary: 45 85% 60%;
+    --secondary-foreground: 230 35% 15%;
+    --secondary-light: 45 75% 75%;
+    --secondary-glow: 45 90% 50%;
+
+    /* Neutral Grays */
+    --muted: 220 13% 96%;
+    --muted-foreground: 230 10% 45%;
+    --muted-dark: 220 13% 91%;
+
+    /* Accent Colors */
+    --accent: 210 100% 96%;
+    --accent-foreground: 230 35% 15%;
+    --accent-blue: 210 85% 60%;
+    --accent-emerald: 160 70% 45%;
+
+    /* System Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 140 70% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 90% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 230 35% 15%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 50%, hsl(var(--accent-blue)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 40px hsl(var(--secondary) / 0.2);
+    --shadow-card: 0 4px 25px -5px hsl(var(--primary) / 0.1);
+
+    /* Typography Scale */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Spacing & Sizing */
+    --radius: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Mode - Sophisticated & Modern */
+    --background: 230 20% 7%;
+    --foreground: 0 0% 95%;
+
+    --card: 230 18% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 230 18% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Primary - Bright in dark mode */
+    --primary: 0 0% 95%;
+    --primary-foreground: 230 20% 7%;
+    --primary-light: 230 15% 85%;
+    --primary-glow: 210 85% 75%;
+
+    /* Secondary - Warm gold maintains elegance */
+    --secondary: 45 85% 65%;
+    --secondary-foreground: 230 20% 7%;
+    --secondary-light: 45 75% 80%;
+    --secondary-glow: 45 90% 55%;
+
+    /* Neutral adjustments */
+    --muted: 230 15% 15%;
+    --muted-foreground: 220 10% 65%;
+    --muted-dark: 230 15% 12%;
+
+    /* Accent colors for dark mode */
+    --accent: 230 15% 15%;
+    --accent-foreground: 0 0% 95%;
+    --accent-blue: 210 85% 70%;
+    --accent-emerald: 160 70% 55%;
+
+    --border: 230 15% 20%;
+    --input: 230 15% 20%;
+    --ring: 210 85% 70%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  /* Hero gradient text effect */
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-secondary {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Elegant animations */
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  .scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .hover-glow {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
