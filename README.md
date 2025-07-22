@@ -4,8 +4,6 @@ This is the official portfolio website for Roshan Chaturvedi, designed to showca
 
 Built as part of an internship project using **React (TypeScript)** and **Laravel API**, this site emphasizes performance, SEO, and clean UI/UX.
 
-> 🔗 **Live Project**: [Lovable Project Link]()
-
 ---
 
 ## 🚀 Tech Stack
@@ -44,5 +42,4 @@ Make sure you have Node.js & npm installed. You can install via [nvm](https://gi
 
 ### 1. Clone the repository:
 ```bash
-git clone <YOUR_GIT_URL>
-cd <YOUR_PROJECT_FOLDER>
+git clone <https://github.com/Sandyleo13/Roshan-Chaturvedi-Portfolio.git>
